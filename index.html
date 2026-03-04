@@ -410,7 +410,21 @@
 
         layer.popupTemplate = {
           title: "{What_is_the_name_of_the_piece_o}",
-          content: "" // title alone is fine, but content is required by some configs
+          content: `
+            <div>
+              <div><strong>Artist:</strong> {What_is_the_artists_name}</div>
+              <div><strong>Type:</strong> {Is_it_a_sculpture_statue_art_in}</div>
+              <div><strong>Year completed:</strong> {What_year_was_the_piece_complet}</div>
+              <div><strong>Location:</strong> {Where_is_this_piece_of_art_City}</div>
+
+              <div class="mt-2">
+                <strong>Description:</strong><br/>
+                {Please_provide_a_short_descript}
+              </div>
+
+              <hr class="my-2"/>
+            </div>
+          `
         };
 
         map.add(layer);
